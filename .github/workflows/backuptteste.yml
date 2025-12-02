@@ -37,6 +37,6 @@ jobs:
           echo test, and deploy your project.
           echo "${{ secrets.CHAVE }}" > chave.pem
           chmod 600 chave.pem
-          ssh -i chave.pem -o StrictHostKeyChecking=no azureuser@4.251.131.103 "tar -cvf /home/sitehtml.tar /var/www/html/index.html"
+          ssh -i chave.pem -o StrictHostKeyChecking=no azureuser@4.251.131.103 "sudo tar -cvf /home/sitehtml.tar /var/www/html/index.html"
           scp -i chave.pem -o StrictHostKeyChecking=no azureuser@4.251.131.103:/home/sitehtml.tar sitehtml.tar
           ls -l
